@@ -6,16 +6,20 @@ import { Header } from "../../common/Header";
 import { TilesList } from "../../common/TilesList";
 import { Box } from "../../common/Box";
 
-export const App = () => (
-  <HashRouter>
-    <Header />
-    <Box />
-    <TilesList />
-    <Switch>
-      <Route path="/evas" component={Evas} />
-      <Route path="/barber" component={Barber} />
-      <Route path="/shop" component={Shop} />
-      <Redirect to="/" />
-    </Switch>
-  </HashRouter>
-);
+
+export const App = () => {
+  
+  return (
+    <HashRouter>
+      <Header />
+      <Box />
+      <TilesList />
+      <Switch>
+        <Route path="/evas" component={Evas} />
+        <Route path="/barber" component={Barber} />
+        <Route path="/shop" component={Shop} />
+        <Redirect to="/" />
+      </Switch>
+    </HashRouter>
+  );
+};

@@ -5,14 +5,22 @@ import { GlobalStyles } from "./core/GlobalStyles";
 import { App } from "./core/App/App";
 import { theme } from "./core/theme";
 import reportWebVitals from "./reportWebVitals";
+import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
+import { ReactQueryDevtools } from "@tanstack/react-query-devtools";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
+
+const queryClient = new QueryClient();
+
 root.render(
   <React.StrictMode>
-    <ThemeProvider theme={theme}>
-      <GlobalStyles />
-      <App />
-    </ThemeProvider>
+    <QueryClientProvider client={queryClient}>
+      <ReactQueryDevtools />
+      <ThemeProvider theme={theme}>
+        <GlobalStyles />
+        <App />
+      </ThemeProvider>
+    </QueryClientProvider>
   </React.StrictMode>
 );
 
