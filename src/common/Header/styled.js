@@ -2,13 +2,13 @@ import styled from "styled-components";
 import { ReactComponent as Logo } from "./logo.svg";
 
 export const Wrapper = styled.div`
-  padding: 26px;
+  padding: 16px;
   background: ${({ theme }) => theme.colors.redArt};
   box-shadow: ${({ theme }) => theme.common.boxShadow};
   transition: transform 0.3s ease;
   transform-origin: center;
   border: none;
-  border-radius: 5px;
+  border-radius: 15px;
   display: flex;
   flex-direction: row;
   justify-content: center;
@@ -21,9 +21,7 @@ export const Wrapper = styled.div`
     justify-items: center;
   }
 
-  &:hover {
-    transform: scale(105%);
-  }
+ 
 `;
 
 export const Image = styled(Logo)`

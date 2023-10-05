@@ -6,6 +6,7 @@ export const MainContainer = styled.div`
   grid-template-columns: repeat(3, 1fr);
   align-content: stretch;
   grid-gap: 24px;
+  margin: 15px;
 
   @media (max-width: ${({ theme }) => theme.breakpoints.tablet}) {
     grid-template-columns: repeat(3, 1fr);
