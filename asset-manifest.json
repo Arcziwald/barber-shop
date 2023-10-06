@@ -1,0 +1,17 @@
+{
+  "files": {
+    "main.js": "/barber-shop/static/js/main.5f82b4a4.js",
+    "static/js/787.56ddd7a5.chunk.js": "/barber-shop/static/js/787.56ddd7a5.chunk.js",
+    "static/media/barber.svg": "/barber-shop/static/media/barber.e347ae4633a9f5b8121391e3d44231d3.svg",
+    "static/media/shop.svg": "/barber-shop/static/media/shop.ff6d9faac2734807ea3cf47eabc4b0df.svg",
+    "static/media/evas.svg": "/barber-shop/static/media/evas.a291fdeb03fb9e13562cc60e110d8b8a.svg",
+    "static/media/secondBox.jpeg": "/barber-shop/static/media/secondBox.a51ef8a3367410247b63.jpeg",
+    "static/media/logo.svg": "/barber-shop/static/media/logo.b67500cb8a68548f32be54b453dcb5f8.svg",
+    "index.html": "/barber-shop/index.html",
+    "main.5f82b4a4.js.map": "/barber-shop/static/js/main.5f82b4a4.js.map",
+    "787.56ddd7a5.chunk.js.map": "/barber-shop/static/js/787.56ddd7a5.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/js/main.5f82b4a4.js"
+  ]
+}
