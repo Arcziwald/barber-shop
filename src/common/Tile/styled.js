@@ -8,14 +8,14 @@ export const Wrapper = styled.div`
   transition: transform 0.3s ease;
   transform-origin: center;
   border: none;
-  border-radius: 5px;
+  border-radius: 15px;
   display: grid;
   grid-template-rows: repeat(2, 1fr);
   justify-content: center;
 
   @media (max-width: ${({ theme }) => theme.breakpoints.smallMobile}) {
     display: grid;
-    grid-template-columns: 130px auto;
+    grid-template-columns: 30px auto;
     grid-template-rows: auto 100%;
     justify-content: unset;
   }
@@ -59,11 +59,11 @@ export const Title = styled.span`
   line-height: 130%;
   color: ${({ theme }) => theme.colors.black};
 
-  @media (max-width: ${({ theme }) => theme.breakpoints.tablet}) {
+  @media (max-width: ${({ theme }) => theme.breakpoints.laptop}) {
     font-size: 20px;
   }
 
-  @media (max-width: ${({ theme }) => theme.breakpoints.defaultMobile}) {
+  @media (max-width: ${({ theme }) => theme.breakpoints.tablet}) {
     font-size: 18px;
   }
 
@@ -71,4 +71,3 @@ export const Title = styled.span`
     font-size: 16px;
   }
 `;
-
