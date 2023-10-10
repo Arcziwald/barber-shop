@@ -1,7 +1,10 @@
+import { Main } from "../Main";
 import { Wrapper, Image } from "./styled";
 
 export const Header = () => (
-  <Wrapper>
+  <Main>
+    <Wrapper>
     <Image />
   </Wrapper>
+  </Main>
 );

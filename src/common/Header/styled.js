@@ -2,37 +2,39 @@ import styled from "styled-components";
 import { ReactComponent as Logo } from "./logo.svg";
 
 export const Wrapper = styled.div`
-  padding: 16px;
+  
   background: ${({ theme }) => theme.colors.redArt};
   box-shadow: ${({ theme }) => theme.common.boxShadow};
   transition: transform 0.3s ease;
   transform-origin: center;
   border: none;
+  margin-top: 5px;
   border-radius: 15px;
   display: flex;
   flex-direction: row;
   justify-content: center;
 
-  @media (max-width: ${({ theme }) => theme.breakpoints.smallMobile}) {
-    display: grid;
-    grid-template-columns: auto;
-    grid-template-rows: auto 100%;
-    justify-content: unset;
-    justify-items: center;
+  @media (max-width: ${({ theme }) => theme.breakpoints.laptop}) {
+    padding: 10px;
   }
-
- 
 `;
 
 export const Image = styled(Logo)`
-  width: 1200px;
-  height: auto;
+  width: 900px;
+
+  @media (max-width: ${({ theme }) => theme.breakpoints.laptop}) {
+    width: 500px;
+  }
+
+  @media (max-width: ${({ theme }) => theme.breakpoints.tablet}) {
+    width: 500px;
+  }
 
   @media (max-width: ${({ theme }) => theme.breakpoints.defaultMobile}) {
-    width: 550px;
+    width: 300px;
   }
 
   @media (max-width: ${({ theme }) => theme.breakpoints.smallMobile}) {
-    width: 220px;
+    width: 250px;
   }
 `;
