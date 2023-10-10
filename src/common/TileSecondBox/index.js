@@ -1,13 +1,13 @@
-import { Wrapper, Title, StyledImgGallery } from "./styled";
+import { Wrapper, StyledImgGallery, StyledTitle } from "./styled";
 import secondBox from "./secondBox.jpeg";
+import gallery from "./gallery.png";
 
 export const TileSecondBox = ({ title }) => {
   return (
     <Wrapper>
-      
-        <Title>{title}</Title>
-     
+      <StyledTitle src={gallery} />
       <StyledImgGallery src={secondBox} />
     </Wrapper>
   );
 };
+ 
