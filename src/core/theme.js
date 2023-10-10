@@ -16,14 +16,12 @@ export const theme = {
     },
   
     breakpoints: {
-      desktop: "1300px",
-      tablet: "1200px",
-      tabletAlternative: "1050px",
-      hugeMobile: "850px",
+       
+      laptop: "1440px",
+      tablet: "1024px",
       defaultMobile: "767px",
-      mediumMobile: "550px",
-      smallMobile: "450px",
-      tinyMobile: "320px",
+      smallMobile: "320px",
+      
     },
   
     common: {
