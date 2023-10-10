@@ -12,13 +12,13 @@ export const MainContainer = styled.div`
   grid-gap: 24px;
   margin: 15px;
 
-  @media (max-width: ${({ theme }) => theme.breakpoints.tablet}) {
-    grid-template-columns: repeat(3, 1fr);
+  @media (max-width: ${({ theme }) => theme.breakpoints.laptop}) {
+    grid-template-columns: repeat(1, 1fr);
     grid-gap: 16px;
   }
 
-  @media (max-width: ${({ theme }) => theme.breakpoints.defaultMobile}) {
-    grid-template-columns: repeat(2, 1fr);
+  @media (max-width: ${({ theme }) => theme.breakpoints.tablet}) {
+    grid-template-columns: repeat(1, 1fr);
     grid-gap: 16px;
   }
 
@@ -31,22 +31,26 @@ export const MainContainer = styled.div`
 export const Tiles = styled.div`
   padding: 16px;
   margin-top: 10px;
-  background-color: rgba(255, 255, 255, 0.6);
+  background-color: rgba(255, 255, 255, 0.3);
   box-shadow: ${({ theme }) => theme.common.boxShadow};
   transition: transform 0.3s ease;
   transform-origin: center;
+  &:hover {
+    transform: scale(105%);
+  }
+
   border: none;
-  border-radius: 5px;
+  border-radius: 15px;
   display: flex;
   justify-content: center;
 
-  @media (max-width: ${({ theme }) => theme.breakpoints.tablet}) {
+  @media (max-width: ${({ theme }) => theme.breakpoints.laptop}) {
     grid-template-columns: repeat(3, 1fr);
     grid-gap: 16px;
   }
 
-  @media (max-width: ${({ theme }) => theme.breakpoints.defaultMobile}) {
-    grid-template-columns: repeat(2, 1fr);
+  @media (max-width: ${({ theme }) => theme.breakpoints.tablet}) {
+    grid-template-columns: repeat(3, 1fr);
     grid-gap: 16px;
   }
 
@@ -58,27 +62,24 @@ export const Tiles = styled.div`
 
 export const StyledLink = styled(Link)`
   border-radius: 5px;
-  
 `;
 
 export const StyledImgEvas = styled(Evas)`
-  width: 100%; 
-  
+  width: 100%;
 
-  @media (max-width: ${({ theme }) => theme.breakpoints.defaultMobile}) {
-    width: 40%; 
+  @media (max-width: ${({ theme }) => theme.breakpoints.tablet}) {
+    width: 40%;
   }
 
   @media (max-width: ${({ theme }) => theme.breakpoints.smallMobile}) {
-    width: 30%; 
+    width: 30%;
   }
 `;
-
 
 export const StyledImgBarber = styled(Barber)`
   width: 110%;
 
-  @media (max-width: ${({ theme }) => theme.breakpoints.defaultMobile}) {
+  @media (max-width: ${({ theme }) => theme.breakpoints.tablet}) {
     width: 50%;
   }
 
@@ -89,7 +90,7 @@ export const StyledImgBarber = styled(Barber)`
 export const StyledImgShop = styled(Shop)`
   width: 100%;
 
-  @media (max-width: ${({ theme }) => theme.breakpoints.defaultMobile}) {
+  @media (max-width: ${({ theme }) => theme.breakpoints.tablet}) {
     width: 40%;
   }
 

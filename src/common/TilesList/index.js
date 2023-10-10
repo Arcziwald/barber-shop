@@ -1,3 +1,4 @@
+import { Main } from "../Main";
 import {
   MainContainer,
   StyledImgBarber,
@@ -8,21 +9,24 @@ import {
 } from "./styled";
 
 export const TilesList = () => (
-  <MainContainer>
-    <Tiles>
-      <StyledLink to={`/evas`}>
-        <StyledImgEvas />
-      </StyledLink>
-    </Tiles>
-    <Tiles>
-      <StyledLink to={`/barber`}>
-        <StyledImgBarber />
-      </StyledLink>
-    </Tiles>
-    <Tiles>
-      <StyledLink to={`/shop`}>
-        <StyledImgShop />
-      </StyledLink>
-    </Tiles>
-  </MainContainer>
+  <Main>
+    <MainContainer>
+  <Tiles>
+    <StyledLink to={`/evas`}>
+      <StyledImgEvas />
+    </StyledLink>
+  </Tiles>
+  <Tiles>
+    <StyledLink to={`/barber`}>
+      <StyledImgBarber />
+    </StyledLink>
+  </Tiles>
+  <Tiles>
+    <StyledLink to={`/shop`}>
+      <StyledImgShop />
+    </StyledLink>
+  </Tiles>
+</MainContainer>
+</Main>
+  
 );
