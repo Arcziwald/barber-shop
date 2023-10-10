@@ -1,13 +1,15 @@
-import { Tile } from "../Tile";
+import { TileThirdBox } from "../TileThirdBox";
 import { TileSecondBox } from "../TileSecondBox";
+import { TileFirstBox } from "../TileFirstBox";
 import { MainContainer } from "./styled";
+import { Main } from "../Main";
 
 export const Box = () => (
-  <MainContainer>
-    <Tile title="Opening Hours" />
-
-    <TileSecondBox title="Gallery" />
-
-    <Tile title="Shop Title" />
-  </MainContainer>
+  <Main>
+    <MainContainer>
+      <TileFirstBox />
+      <TileSecondBox />
+      <TileThirdBox />
+    </MainContainer>
+  </Main>
 );
