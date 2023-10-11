@@ -16,8 +16,7 @@ export const Wrapper = styled.div`
   justify-content: space-around;
   flex-direction: row;
   align-content: stretch;
-
-  `;
+`;
 
 export const StyledImgHours = styled.img`
   width: 100%;
@@ -36,7 +35,7 @@ export const StyledImgHours = styled.img`
   }
 `;
 
-export const StyledImgKontakt = styled.img`
+export const StyledImgcallMe = styled.img`
   width: 50%;
   border-radius: 45px;
   background-color: rgba(255, 255, 255, 0.15);
@@ -46,8 +45,7 @@ export const StyledImgKontakt = styled.img`
   }
 
   @media (max-width: ${({ theme }) => theme.breakpoints.defaultMobile}) {
-    
-      }
+  }
 
   @media (max-width: ${({ theme }) => theme.breakpoints.smallMobile}) {
     width: 50%;
@@ -56,7 +54,7 @@ export const StyledImgKontakt = styled.img`
   }
 `;
 
-export const StyledImgRegistration = styled.img`
+export const StyledImgBooking = styled.img`
   width: 50%;
   border-radius: 35px;
   background-color: rgba(255, 255, 255, 0.15);
