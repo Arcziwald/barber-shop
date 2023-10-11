@@ -40,11 +40,11 @@ export const StyledImgGallery = styled.img`
   border-radius: 15px;
 
   @media (max-width: ${({ theme }) => theme.breakpoints.laptop}) {
-    width: 80%;
+    width: 100%;
   }
 
   @media (max-width: ${({ theme }) => theme.breakpoints.tablet}) {
-    width: 80%;
+    width: 100%;
   }
 
   @media (max-width: ${({ theme }) => theme.breakpoints.smallMobile}) {
