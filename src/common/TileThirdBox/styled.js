@@ -41,6 +41,7 @@ export const Title = styled.span`
 
 export const StyledImgGallery = styled.img`
   border-radius: 15px;
+  width: 100%;
 
   @media (max-width: ${({ theme }) => theme.breakpoints.laptop}) {
     width: 80%;
