@@ -1,4 +1,4 @@
-import { Link } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 import styled from "styled-components";
 import { ReactComponent as Evas } from "../TilesList/evas.svg";
 import { ReactComponent as Barber } from "../TilesList/barber.svg";
@@ -60,7 +60,7 @@ export const Tiles = styled.div`
   }
 `;
 
-export const StyledLink = styled(Link)`
+export const StyledLink = styled(NavLink)`
   border-radius: 5px;
 `;
 
