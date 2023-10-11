@@ -11,13 +11,8 @@ export const Wrapper = styled.div`
   border: none;
   border-radius: 15px;
   display: flex;
-  justify-content: space-around;
-  flex-direction: column-reverse;
+  justify-content: space-between;
   align-items: center;
-
-  &:hover {
-    transform: scale(105%);
-  }
 `;
 
 export const Title = styled.span`
@@ -40,8 +35,9 @@ export const Title = styled.span`
 `;
 
 export const StyledImgGallery = styled.img`
-  border-radius: 15px;
   width: 100%;
+  height: 100%;
+  border-radius: 15px;
 
   @media (max-width: ${({ theme }) => theme.breakpoints.laptop}) {
     width: 80%;

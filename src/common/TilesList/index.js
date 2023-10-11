@@ -14,14 +14,13 @@ export const TilesList = () => (
   <Main>
     <Box />
     <MainContainer>
-  
       <Tiles>
         <StyledLink to="/contact">
           <StyledImgEvas />
         </StyledLink>
       </Tiles>
       <Tiles>
-        <StyledLink to="/gallery">c
+        <StyledLink to="/gallery">
           <StyledImgBarber />
         </StyledLink>
       </Tiles>
