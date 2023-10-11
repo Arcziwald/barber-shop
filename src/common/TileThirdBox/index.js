@@ -13,16 +13,16 @@ export const TileThirdBox = () => {
       setCurrentImageIndex((prevIndex) =>
         prevIndex === images.length - 1 ? 0 : prevIndex + 1
       );
-    }, 3000); // 5000 milisekund (czyli 3 sekund)
+    }, 3000);
     return () => {
-      clearInterval(interval); // Wyczyszczenie interwału przy odmontowaniu komponentu
+      clearInterval(interval);
     };
   }, [images]);
 
   return (
     <Wrapper>
       <StyledImgGallery
-        src={images[currentImageIndex]} // Usunięte dodatkowe "./" przed ścieżkami
+        src={images[currentImageIndex]}
         alt={`Obrazek ${currentImageIndex + 1}`}
       />
     </Wrapper>
