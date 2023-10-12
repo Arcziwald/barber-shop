@@ -1,23 +1,13 @@
 import { Wrapper, StyledImgGallery } from "./styled";
-import { useEffect, useState } from "react";
+import { useImageSlider } from "../TilesList/useImageSlider";
 import standingsolar from "./standingsolar.jpeg";
 import lyingsolar from "./lyingsolar.jpeg";
+import solar from "./solar.jpg";
 
 export const TileThirdBox = () => {
   // eslint-disable-next-line react-hooks/exhaustive-deps
-  const images = [standingsolar, lyingsolar];
-  const [currentImageIndex, setCurrentImageIndex] = useState(0);
-
-  useEffect(() => {
-    const interval = setInterval(() => {
-      setCurrentImageIndex((prevIndex) =>
-        prevIndex === images.length - 1 ? 0 : prevIndex + 1
-      );
-    }, 3000);
-    return () => {
-      clearInterval(interval);
-    };
-  }, [images]);
+  const images = [lyingsolar,standingsolar, solar];
+  const currentImageIndex = useImageSlider(images, 3000);
 
   return (
     <Wrapper>
