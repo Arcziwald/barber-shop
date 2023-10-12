@@ -1,8 +1,10 @@
 {
   "files": {
-    "main.js": "/barber-shop/static/js/main.3fece5fe.js",
+    "main.js": "/barber-shop/static/js/main.e522f9fe.js",
     "static/js/787.56ddd7a5.chunk.js": "/barber-shop/static/js/787.56ddd7a5.chunk.js",
     "static/media/openhours.svg": "/barber-shop/static/media/openhours.1ec134f06e53f03907a5e08728a1633f.svg",
+    "static/media/salon.jpg": "/barber-shop/static/media/salon.faadc286a61515b287cb.jpg",
+    "static/media/solar.jpg": "/barber-shop/static/media/solar.be547e95583627b6910a.jpg",
     "static/media/standingsolar.jpeg": "/barber-shop/static/media/standingsolar.7ef77d413fc74004c0ed.jpeg",
     "static/media/barber.svg": "/barber-shop/static/media/barber.e347ae4633a9f5b8121391e3d44231d3.svg",
     "static/media/shop.svg": "/barber-shop/static/media/shop.ff6d9faac2734807ea3cf47eabc4b0df.svg",
@@ -11,13 +13,14 @@
     "static/media/secondBox.jpeg": "/barber-shop/static/media/secondBox.a51ef8a3367410247b63.jpeg",
     "static/media/callMe.png": "/barber-shop/static/media/callMe.1e6c13f5786caf9368c0.png",
     "static/media/booking.png": "/barber-shop/static/media/booking.e9d1b06a5752388f024c.png",
+    "static/media/salonwashing.jpeg": "/barber-shop/static/media/salonwashing.5b4268bb57be83b42211.jpeg",
     "static/media/logo.svg": "/barber-shop/static/media/logo.b67500cb8a68548f32be54b453dcb5f8.svg",
     "static/media/gallery.png": "/barber-shop/static/media/gallery.f6c3d0eefa42da027338.png",
     "index.html": "/barber-shop/index.html",
-    "main.3fece5fe.js.map": "/barber-shop/static/js/main.3fece5fe.js.map",
+    "main.e522f9fe.js.map": "/barber-shop/static/js/main.e522f9fe.js.map",
     "787.56ddd7a5.chunk.js.map": "/barber-shop/static/js/787.56ddd7a5.chunk.js.map"
   },
   "entrypoints": [
-    "static/js/main.3fece5fe.js"
+    "static/js/main.e522f9fe.js"
   ]
 }
