@@ -31,7 +31,8 @@ export const StyledTitle = styled.img`
 `;
 
 export const StyledImgGallery = styled.img`
-  border-radius: 15px;
+  padding: 10px;
+  border-radius: 55px;
   width: 100%;
 
   @media (max-width: ${({ theme }) => theme.breakpoints.tablet}) {
