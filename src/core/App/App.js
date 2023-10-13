@@ -2,7 +2,7 @@ import { HashRouter, Redirect, Route, Switch } from "react-router-dom";
 import { Header } from "../../common/Header";
 import { TilesList } from "../../common/TilesList";
 import { Contact } from "../../common/Contact";
-import { Gallery } from "../../common/Gallery";
+import { Gallery } from "../../js/Gallery";
 import { Shop } from "../../common/Shop";
 
 export const App = () => {
