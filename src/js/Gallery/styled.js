@@ -1,20 +1,51 @@
 import styled from "styled-components";
 
-
 export const Wrapper = styled.div`
-  /* Twoje style CSS tutaj */
-  .pswp-gallery a {
-    margin: 10px;
-    display: flex;
-    width: 100%;
-    border-radius: 15px;
+  margin-top: 10px;
+  background: ${({ theme }) => theme.colors.white};
+  background-color: rgba(255, 255, 255, 0.2);
+  box-shadow: ${({ theme }) => theme.common.boxShadow};
+  transition: transform 0.3s ease;
+  transform-origin: center;
+  border: none;
+  border-radius: 15px;
+  display: flex;
+  justify-content: space-around;
+  flex-direction: column-reverse;
+  align-items: center;
+
+  @media (max-width: ${({ theme }) => theme.breakpoints.tablet}) {
+    padding: 8px;
+  }
+
+  @media (max-width: ${({ theme }) => theme.breakpoints.smallMobile}) {
   }
 `;
 
 export const StyledImgGallery = styled.img`
-  width: 100%;
-  height: 100%;
+  max-width: 300px;
+  max-height: auto;
   border-radius: 15px;
+  padding: 10px;
+
+  @media (max-width: ${({ theme }) => theme.breakpoints.laptop}) {
+    width: 100%;
+  }
+
+  @media (max-width: ${({ theme }) => theme.breakpoints.tablet}) {
+    width: 100%;
+  }
+
+  @media (max-width: ${({ theme }) => theme.breakpoints.smallMobile}) {
+    width: 100%;
+  }
+`;
+
+export const Miniatura = styled.img`
+  max-width: 100px;
+  max-height: auto;
+  border-radius: 15px;
+  padding: 10px;
 
   @media (max-width: ${({ theme }) => theme.breakpoints.laptop}) {
     width: 100%;
