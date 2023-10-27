@@ -1,0 +1,36 @@
+[
+  {
+    "name": "AutumnColors",
+    "images": [
+      {
+        "name": "image1",
+        "thumbnail": "/imagesHair/autumnColors/thumbnail/shot1.jpg",
+        "fullSize": "/imagesHair/autumnColors/shot1.jpg",
+        "description": "Opis obrazu 1"
+      },
+      {
+        "name": "image2",
+        "thumbnail": "/imagesHair/autumnColors/thumbnail/shot2.jpg",
+        "fullSize": "/imagesHair/autumnColors/shot2.jpg",
+        "description": "Opis obrazu 2"
+      }
+    ]
+  },
+  {
+    "name": "HairStyle",
+    "images": [
+      {
+        "name": "image1",
+        "thumbnail": "/imagesHair/hairStyle/thumbnail/shot1.jpg",
+        "fullSize": "/imagesHair/hairStyle/shot1.jpg",
+        "description": "Opis obrazu 1"
+      },
+      {
+        "name": "image2",
+        "thumbnail": "/imagesHair/hairStyle/thumbnail/shot2.jpg",
+        "fullSize": "/imagesHair/hairStyle/shot2.jpg",
+        "description": "Opis obrazu 2"
+      }
+    ]
+  }
+]
