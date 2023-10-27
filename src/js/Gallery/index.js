@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import { Wrapper, StyledImgGallery, Miniatura } from "./styled";
 import { Main } from "../../common/Main";
 import imagesData from "./imagesData.json";
