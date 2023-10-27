@@ -1,62 +1,47 @@
-import React, { useEffect } from 'react';
-import PhotoSwipeLightbox from 'photoswipe/lightbox';
-import PhotoSwipe from 'photoswipe';
-import { Main } from '../../common/Main';
-import { Wrapper } from './styled';
+import React, { useState } from "react";
+import { Wrapper, StyledImgGallery, Miniatura } from "./styled";
+import { Main } from "../../common/Main";
+import imagesData from "./imagesData.json";
+
+if (module.hot) {
+  module.hot.accept();
+}
 
 export const Gallery = () => {
-  useEffect(() => {
-    const items = [
-      {
-        src: './imagesHair/autumnColors/shot1.jpg',
-        w: 500, // szerokość obrazu
-        h: 700, // wysokość obrazu
-        title: 'Opis obrazu 1',
-      },
-      {
-        src: './imagesHair/hairStyle/shot1.jpg',
-        w: 720,
-        h: 960,
-        title: 'Opis obrazu 2',
-      },
-      // Dodaj tutaj więcej obiektów dla kolejnych zdjęć
-    ];
+  const [currentImage, setCurrentImage] = useState(null);
 
-    const lightbox = new PhotoSwipeLightbox({
-      gallery: '#gallery',
-      children: 'a',
-      pswpModule: () => import('photoswipe'),
-    });
+  const openImage = (imagePath) => {
+    setCurrentImage(imagePath);
+  };
 
-    // Dodaj dane źródłowe do lightboxa
-    lightbox.items = items;
-
-    lightbox.init();
-  }, []);
+  const closeImage = () => {
+    setCurrentImage(null);
+  };
 
   return (
     <Main>
-        <Wrapper>
-      <div className="pswp-gallery pswp-gallerygallery--getting-started" id="gallery">
-        {/* Wszystkie dane źródłowe są przekazywane bezpośrednio do lightboxa */}
-        {/* Nie jest potrzebna tablica 'items' */}
-        <a
-          href="./imagesHair/autumnColors/shot1.jpg"
-          data-pswp-width={720}
-          data-pswp-height={960}
-          data-pswp-title="Opis obrazu 1"
-        >
-          <img src="./imagesHair/autumnColors/shot1.jpg" alt="Opis obrazu 1" />
-        </a>
-        <a
-          href="./imagesHair/hairStyle/shot1.jpg"
-          data-pswp-width={720}
-          data-pswp-height={960}
-          data-pswp-title="Opis obrazu 2"
-        >
-          <img src="./imagesHair/hairStyle/shot1.jpg" alt="Opis obrazu 2" />
-        </a>
-      </div>
+      <Wrapper>
+        <div>
+          {imagesData.map((category, index) => (
+            <div key={index}>
+              <h2>{category.name}</h2>
+              {category.images.map((imageInfo, subIndex) => (
+                <Miniatura
+                  key={subIndex}
+                  src={process.env.PUBLIC_URL + imageInfo.thumbnail}
+                  alt={imageInfo.description}
+                  onClick={() => openImage(process.env.PUBLIC_URL + imageInfo.fullSize)}
+                />
+              ))}
+            </div>
+          ))}
+        </div>
+        {currentImage && (
+          <div>
+            <StyledImgGallery src={currentImage} alt="Powiększone zdjęcie" />
+            <button onClick={closeImage}>Zamknij</button>
+          </div>
+        )}
       </Wrapper>
     </Main>
   );
