@@ -23,7 +23,7 @@ export const Wrapper = styled.div`
 `;
 
 export const StyledImgGallery = styled.img`
-  max-width: 300px;
+  max-width: 400px;
   max-height: auto;
   border-radius: 15px;
   padding: 10px;
@@ -42,7 +42,7 @@ export const StyledImgGallery = styled.img`
 `;
 
 export const Miniatura = styled.img`
-  max-width: 100px;
+  max-width: 150px;
   max-height: auto;
   border-radius: 15px;
   padding: 10px;

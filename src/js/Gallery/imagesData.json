@@ -4,15 +4,27 @@
     "images": [
       {
         "name": "image1",
-        "thumbnail": "/imagesHair/autumnColors/thumbnail/shot1.jpg",
+        "thumbnail": "/imagesHair/autumnColors/shot1.jpg",
         "fullSize": "/imagesHair/autumnColors/shot1.jpg",
         "description": "Opis obrazu 1"
       },
       {
         "name": "image2",
-        "thumbnail": "/imagesHair/autumnColors/thumbnail/shot2.jpg",
+        "thumbnail": "/imagesHair/autumnColors/shot2.jpg",
         "fullSize": "/imagesHair/autumnColors/shot2.jpg",
         "description": "Opis obrazu 2"
+      },
+      {
+        "name": "image3",
+        "thumbnail": "/imagesHair/autumnColors/shot3.jpg",
+        "fullSize": "/imagesHair/autumnColors/shot3.jpg",
+        "description": "Opis obrazu 3"
+      },
+      {
+        "name": "image4",
+        "thumbnail": "/imagesHair/autumnColors/shot4.jpg",
+        "fullSize": "/imagesHair/autumnColors/shot4.jpg",
+        "description": "Opis obrazu 4"
       }
     ]
   },
@@ -21,15 +33,27 @@
     "images": [
       {
         "name": "image1",
-        "thumbnail": "/imagesHair/hairStyle/thumbnail/shot1.jpg",
+        "thumbnail": "/imagesHair/hairStyle/shot1.jpg",
         "fullSize": "/imagesHair/hairStyle/shot1.jpg",
         "description": "Opis obrazu 1"
       },
       {
         "name": "image2",
-        "thumbnail": "/imagesHair/hairStyle/thumbnail/shot2.jpg",
+        "thumbnail": "/imagesHair/hairStyle/shot2.jpg",
         "fullSize": "/imagesHair/hairStyle/shot2.jpg",
         "description": "Opis obrazu 2"
+      },
+      {
+        "name": "image3",
+        "thumbnail": "/imagesHair/hairStyle/shot3.jpg",
+        "fullSize": "/imagesHair/hairStyle/shot3.jpg",
+        "description": "Opis obrazu 3"
+      },
+      {
+        "name": "image4",
+        "thumbnail": "/imagesHair/hairStyle/shot4.jpg",
+        "fullSize": "/imagesHair/hairStyle/shot4.jpg",
+        "description": "Opis obrazu 4"
       }
     ]
   }
