@@ -17,6 +17,7 @@
     "gh-pages": "^6.0.0",
     "handlebars": "^4.7.8",
     "lodash": "^4.17.21",
+    "mongodb": "^6.2.0",
     "photoswipe": "^5.4.2",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
