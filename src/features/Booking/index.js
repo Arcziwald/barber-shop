@@ -1,6 +1,22 @@
 import React, { Component } from "react";
 import { Main } from "../../common/Main";
-import { Title, Wrapper } from "./styled";
+import {
+  Wrapper,
+  Title,
+  Message,
+  Form,
+  Label,
+  Input,
+  DateAndTimeWrapper,
+  DateInput,
+  TimeInput,
+  Select,
+  Textarea,
+  Button,
+  FormSection,
+  LeftSection,
+  RightSection,
+} from "./styled";
 
 class HaircutReservationForm extends Component {
   constructor(props) {
@@ -73,18 +89,20 @@ class HaircutReservationForm extends Component {
   isTimeSlotAvailable = () => {
     const { date, time, selectedService } = this.state;
     const selectedDateTime = `${date} ${time}`;
-  
+
     // Sprawdzamy, czy termin jest już zarezerwowany
     if (this.state.busyTimes.includes(selectedDateTime)) {
       return false;
     }
-  
+
     // Sprawdzamy, czy termin jest zablokowany dla danej usługi fryzjerskiej
     const isTimeSlotBlocked = this.state.busyTimes.some((busyTime) => {
       const [busyDateTime, busyService] = busyTime.split(" ");
-      return busyDateTime === selectedDateTime && busyService !== selectedService;
+      return (
+        busyDateTime === selectedDateTime && busyService !== selectedService
+      );
     });
-  
+
     return !isTimeSlotBlocked;
   };
 
@@ -111,7 +129,7 @@ class HaircutReservationForm extends Component {
         if (response.ok) {
           // Obsługa sukcesu
           this.setState({
-            message: "Rezerwacja udana!",
+            message: "Rezerwacja udana 😎",
             busyTimes: [...this.state.busyTimes, `${date} ${time}`],
           });
         } else {
@@ -137,7 +155,7 @@ class HaircutReservationForm extends Component {
     const endMinute = startMinute + duration;
 
     let endHour = startHour + Math.floor(endMinute / 60);
-    endHour = endHour % 24; 
+    endHour = endHour % 24;
     const formattedEndHour = endHour.toString().padStart(2, "0");
     const formattedEndMinute = (endMinute % 60).toString().padStart(2, "0");
 
@@ -148,99 +166,109 @@ class HaircutReservationForm extends Component {
     return (
       <Main>
         <Wrapper>
-          {this.state.message && (
-            <div className="message">{this.state.message}</div>
-          )}
-          <Title>Zarezerwuj termin fryzjerski</Title>
-          <form onSubmit={this.handleSubmit}>
-            <label htmlFor="name">Imię i nazwisko:</label>
-            <input
-              type="text"
-              id="name"
-              name="name"
-              value={this.state.name}
-              onChange={this.handleInputChange}
-              required
-              autoComplete="name" // Dodaj atrybut autocomplete
-            />
-
-            <label htmlFor="phoneNumber">Numer telefonu:</label>
-            <input
-              type="tel"
-              id="phoneNumber"
-              name="phoneNumber"
-              value={this.state.phoneNumber}
-              onChange={this.handleInputChange}
-              required
-              autoComplete="tel"
-            />
-
-            <label htmlFor="email">Adres email:</label>
-            <input
-              type="email"
-              id="email"
-              name="email"
-              value={this.state.email}
-              onChange={this.handleInputChange}
-              required
-              autoComplete="email"
-            />
-
-            <label htmlFor="selectedService">Wybierz usługę fryzjerską:</label>
-            <select
-              id="selectedService"
-              name="selectedService"
-              value={this.state.selectedService}
-              onChange={this.handleInputChange}
-            >
-              <option value="Strzyżenie">Strzyżenie</option>
-              <option value="Koloryzacja">Koloryzacja</option>
-              <option value="Stylizacja">Stylizacja</option>
-              <option value="Inna">Inna (napisz w uwagach)</option>
-            </select>
-
-            <label htmlFor="selectedOderService">Wybierz inną usługę:</label>
-            <select
-              id="selectedOderService"
-              name="selectedOderService"
-              value={this.state.selectedOderService}
-              onChange={this.handleInputChange}
-            >
+        <Form onSubmit={this.handleSubmit}>
+          {this.state.message && <Message>{this.state.message}</Message>}
+          
+            <Title>Zarezerwuj termin</Title>
+            <FormSection>
+              <LeftSection>
+                <Label>Imię i nazwisko:</Label>
+                <Input
+                  type="text"
+                  id="name"
+                  name="name"
+                  value={this.state.name}
+                  onChange={this.handleInputChange}
+                  required
+                  autoComplete="name"
+                />
+    
+                <Label>Numer telefonu:</Label>
+                <Input
+                  type="tel"
+                  id="phoneNumber"
+                  name="phoneNumber"
+                  value={this.state.phoneNumber}
+                  onChange={this.handleInputChange}
+                  required
+                  autoComplete="tel"
+                />
+    
+                <Label>Adres email:</Label>
+                <Input
+                  type="email"
+                  id="email"
+                  name="email"
+                  value={this.state.email}
+                  onChange={this.handleInputChange}
+                  required
+                  autoComplete="email"
+                />
+              </LeftSection>
+              <RightSection>
+                <Label htmlFor="selectedService">Wybierz usługę fryzjerską:</Label>
+                <Select
+                  id="selectedService"
+                  name="selectedService"
+                  value={this.state.selectedService}
+                  onChange={this.handleInputChange}
+                >
+                  <option value="">-wybierz-</option>
+                  <option value="Strzyżenie">Strzyżenie</option>
+                  <option value="Koloryzacja">Koloryzacja</option>
+                  <option value="Stylizacja">Stylizacja</option>
+                  <option value="Inna">Inna (napisz w uwagach)</option>
+                </Select>
+    
+                <Label htmlFor="selectedOderService">Wybierz inną usługę:</Label>
+                <Select
+                  id="selectedOderService"
+                  name="selectedOderService"
+                  value={this.state.selectedOderService}
+                  onChange={this.handleInputChange}
+                  >
+              <option value="">-wybierz-</option>
               <option value="Solarium stojące">Solarium stojące</option>
               <option value="Solarium leżące">Solarium leżące</option>
               <option value="Inna">Inna (napisz w uwagach)</option>
-            </select>
-
-            <label htmlFor="date">Data preferowanego terminu:</label>
-            <input
-              type="date"
-              id="date"
-              name="date"
-              value={this.state.date}
-              onChange={this.handleInputChange}
-              min={this.getMinDate()} // Ustalamy minimalną datę na podstawie zajętych terminów
-            />
-
-            <label htmlFor="time">Godzina preferowanego terminu:</label>
-            <input
-              type="time"
-              id="time"
-              name="time"
-              value={this.state.time}
-              onChange={this.handleInputChange}
-              disabled={!this.isTimeSlotAvailable()} // Wyłączamy pole czasu, jeśli jest zajęte
-            />
-
-            <label htmlFor="additionalNotes">Dodatkowe uwagi:</label>
-            <textarea
+            </Select>
+            
+              </RightSection>
+            </FormSection>
+            <DateAndTimeWrapper>
+              <div>
+                <Label htmlFor="date">Data:</Label>
+                <DateInput
+                  type="date"
+                  id="date"
+                  name="date"
+                  value={this.state.date}
+                  onChange={this.handleInputChange}
+                  min={this.getMinDate()}
+                />
+              </div>
+              <div>
+                <Label htmlFor="time">Godzina:</Label>
+                <TimeInput
+                  type="time"
+                  id="time"
+                  name="time"
+                  value={this.state.time}
+                  onChange={this.handleInputChange}
+                  disabled={!this.isTimeSlotAvailable()}
+                />
+              </div>
+            </DateAndTimeWrapper>
+            <Label htmlFor="additionalNotes">Dodatkowe informacje:</Label>
+            <Textarea
               id="additionalNotes"
               name="additionalNotes"
               value={this.state.additionalNotes}
               onChange={this.handleInputChange}
             />
-
-            <button type="submit">Zarejestruj</button>
-          </form>
+    
+            <Button type="submit">Zarejestruj</Button>
+          </Form>
         </Wrapper>
       </Main>
     );
