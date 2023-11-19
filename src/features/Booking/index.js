@@ -12,7 +12,7 @@ class HaircutReservationForm extends Component {
       name: "",
       phoneNumber: "",
       email: "",
-      selectedService: "Strzyżenie",
+      selectedService: "",
       selectedStylist: "",
       date: "",
       time: "",
@@ -36,20 +36,38 @@ class HaircutReservationForm extends Component {
     return !busyTimes.includes(selectedDateTime);
   }
 
-  handleSubmit = (event) => {
+  handleSubmit = async (event) => {
     event.preventDefault();
     if (this.isTimeSlotAvailable()) {
-      // Tutaj możesz dodać obsługę wysłania formularza, na przykład wywołując odpowiednią funkcję.
-      // Możesz przekazać stan tego komponentu do tej funkcji, aby uzyskać dane wprowadzone przez użytkownika.
+      try {
+        const response = await fetch("http://localhost:3001/submitReservation", {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify(this.state),
+        });
+  
+        if (response.ok) {
+          // Obsługa sukcesu
+          this.setState({ message: "Rezerwacja udana!" });
+        } else {
+          // Obsługa błędu
+          this.setState({ message: "Wystąpił błąd podczas rezerwacji. Spróbuj ponownie." });
+        }
+      } catch (error) {
+        console.error("Błąd sieci:", error);
+      }
     } else {
-      alert("Wybrany termin jest zajęty. Proszę wybrać inny termin.");
+      alert("Soreczka, wybrany termin jest już zajęty. Upoluj sobie inny termin.");
     }
-  }
+  };
 
   render() {
     return (
       <Main>
         <Wrapper>
+        {this.state.message && <div className="message">{this.state.message}</div>}
           <Title>Zarezerwuj termin fryzjerski</Title>
           <form onSubmit={this.handleSubmit}>
             <label htmlFor="name">Imię i nazwisko:</label>
@@ -60,6 +78,7 @@ class HaircutReservationForm extends Component {
               value={this.state.name}
               onChange={this.handleInputChange}
               required
+              autoComplete="name" // Dodaj atrybut autocomplete
             />
 
             <label htmlFor="phoneNumber">Numer telefonu:</label>
@@ -70,6 +89,7 @@ class HaircutReservationForm extends Component {
               value={this.state.phoneNumber}
               onChange={this.handleInputChange}
               required
+              autoComplete="tel"
             />
 
             <label htmlFor="email">Adres email:</label>
@@ -80,7 +100,7 @@ class HaircutReservationForm extends Component {
               value={this.state.email}
               onChange={this.handleInputChange}
               required
-              autoComplete="username"
+              autoComplete="email"
             />
 
             <label htmlFor="selectedService">Wybierz usługę fryzjerską:</label>
@@ -93,17 +113,20 @@ class HaircutReservationForm extends Component {
               <option value="Strzyżenie">Strzyżenie</option>
               <option value="Koloryzacja">Koloryzacja</option>
               <option value="Stylizacja">Stylizacja</option>
-              <option value="Inna">Inna (proszę podać)</option>
+              <option value="Inna">Inna (napisz w uwagach)</option>
             </select>
-
-            <label htmlFor="selectedStylist">Wybierz preferowanego fryzjera:</label>
-            <input
-              type="text"
-              id="selectedStylist"
-              name="selectedStylist"
-              value={this.state.selectedStylist}
+            
+            <label htmlFor="selectedOderService">Wybierz inną usługę:</label>
+            <select
+              id="selectedOderService"
+              name="selectedOderService"
+              value={this.state.selectedOderService}
               onChange={this.handleInputChange}
-            />
+            >
+              <option value="Solarium stojące">Solarium stojące</option>
+              <option value="Solarium leżące">Solarium leżące</option>
+              <option value="Inna">Inna (napisz w uwagach)</option>
+            </select>
 
             <label htmlFor="date">Data preferowanego terminu:</label>
             <input
