@@ -24,22 +24,18 @@ export const Contact = () => {
   };
 
   const handleShowOnMap = () => {
+    // Dodatkowe informacje, takie jak lokalizacja lub kod pocztowy
+    const additionalInfo = "Unit2 Irishtown, Athlone";
     // Nazwa salonu fryzjerskiego "Eva's Barber Shop"
     const placeName = "Eva's Barber Shop";
     // Otwieranie linku z konkretną lokalizacją fryzjera w Google Maps
-    window.open(
-      `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(
-        placeName
-      )}`,
-      "_blank"
-    );
-  };
+    window.open(`https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(placeName + ' ' + additionalInfo)}`, '_blank');
+};
 
   return (
     <Main>
-      
-        <Title>Kontakt</Title>
-        <MainContainer>
+      <Title>Kontakt</Title>
+      <MainContainer>
         <Tiles>
           <Form onSubmit={handleSubmit}>
             <div>
@@ -87,9 +83,9 @@ export const Contact = () => {
           </Form>{" "}
         </Tiles>
         <Tiles>
-          
-            <Label>
-              <h1>Eva`s Barber Shop </h1><br />
+          <Label>
+            <h1>Eva`s Barber Shop </h1>
+            <br />
             Unit2 Irishtown <br />
             Athlone, Co. Weastmeath <br />
             tel. +353 89 220 26 22 <br />
@@ -98,35 +94,38 @@ export const Contact = () => {
           <Button onClick={handleShowOnMap}>Pokaż na mapie</Button>{" "}
         </Tiles>
         <Tiles>
-          <div style={{ textAlign: 'center' }}>
+          <div style={{ textAlign: "center" }}>
             <small>
               Administratorem danych gromadzonych z wykorzystaniem formularza
               jest Eva`s Barber Shop z siedzibą w Athlone <br />
-              (adres: Unit2 Irishtown, Athlone, Co. Westmeath , tel. +353 89 220 26 22, email: evasbarbershop@gmail.com).
+              (adres: Unit2 Irishtown, Athlone, Co. Westmeath , tel. +353 89 220
+              26 22, email: evasbarbershop@gmail.com).
               <p>
                 <b>
                   {" "}
                   Podane dane będą przetwarzane w celu umożliwienia korzystania
-                  z funkcji Serwisu oraz co najważniejsze dokonania zakupów <br />
+                  z funkcji Serwisu oraz co najważniejsze dokonania zakupów{" "}
+                  <br />
                   zgodnie z art. 6 ust. 1 lit b. RODO lub w przypadku wyrażonej
                   zgody (zgodnie z art. 6 ust. 1 lit. a RODO) <br />
-                  do celów wysyłki informacji o produktach i usługach administratora lub treści
-                  marketingowych.{" "}
+                  do celów wysyłki informacji o produktach i usługach
+                  administratora lub treści marketingowych.{" "}
                 </b>
               </p>
               Masz prawo dostępu do treści swoich danych, ich sprostowania,
               żądania usunięcia lub ograniczenia przetwarzania, <br />
-              prawo do wniesienia sprzeciwu wobec przetwarzania, prawo do przenoszenia
-              danych, prawo wniesienia skargi <br />
-              do organu nadzorczego oraz prawo cofnięcia w każdym momencie wyrażonej zgody na przetwarzanie.
-              Podanie <br />danych osobowych jest dobrowolne jednak niezbędne do
-              założenia realizacji zakupów 
-              w Serwisie lub wysyłki <br />stosownych informacji na warunkach udzielonej zgody. Wszelkie informacje
-              w zakresie przetwarzania podanych <br />w formularzu danych oraz
-              posiadanych uprawnieniach osoby,której dane dotyczą znajdziesz w
-              Polityce Prywatności. <br />
-              Kliknij i dowiedz się więcej jeżeli
-              informacje podane powyżej nie są dostatecznie jasne!
+              prawo do wniesienia sprzeciwu wobec przetwarzania, prawo do
+              przenoszenia danych, prawo wniesienia skargi <br />
+              do organu nadzorczego oraz prawo cofnięcia w każdym momencie
+              wyrażonej zgody na przetwarzanie. Podanie <br />
+              danych osobowych jest dobrowolne jednak niezbędne do założenia
+              realizacji zakupów w Serwisie lub wysyłki <br />
+              stosownych informacji na warunkach udzielonej zgody. Wszelkie
+              informacje w zakresie przetwarzania podanych <br />w formularzu
+              danych oraz posiadanych uprawnieniach osoby,której dane dotyczą
+              znajdziesz w Polityce Prywatności. <br />
+              Kliknij i dowiedz się więcej jeżeli informacje podane powyżej nie
+              są dostatecznie jasne!
             </small>
           </div>
         </Tiles>
