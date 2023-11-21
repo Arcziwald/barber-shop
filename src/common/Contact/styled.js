@@ -1,14 +1,13 @@
 import { NavLink } from "react-router-dom";
 import styled from "styled-components";
 
-
 export const MainContainer = styled.div`
   display: grid;
   justify-items: stretch;
   align-content: stretch;
   grid-gap: 14px;
-  margin: 10px 10px;
- 
+  margin: 0px 25px;
+
   @media (max-width: ${({ theme }) => theme.breakpoints.laptop}) {
     grid-template-columns: repeat(1, 1fr);
     grid-gap: 16px;
@@ -35,15 +34,15 @@ export const Title = styled.span`
   color: ${({ theme }) => theme.colors.white};
 
   @media (max-width: ${({ theme }) => theme.breakpoints.laptop}) {
-    font-size: 20px;
+    font-size: 30px;
   }
 
   @media (max-width: ${({ theme }) => theme.breakpoints.tablet}) {
-    font-size: 18px;
+    font-size: 30px;
   }
 
   @media (max-width: ${({ theme }) => theme.breakpoints.smallMobile}) {
-    font-size: 16px;
+    font-size: 20px;
   }
 `;
 
@@ -59,12 +58,12 @@ export const Tiles = styled.div`
   align-items: center;
 
   @media (max-width: ${({ theme }) => theme.breakpoints.laptop}) {
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(3, 1fr);
     grid-gap: 16px;
   }
 
   @media (max-width: ${({ theme }) => theme.breakpoints.tablet}) {
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(2, 1fr);
     grid-gap: 16px;
   }
 
@@ -101,10 +100,10 @@ export const Form = styled.form`
 `;
 
 export const Input = styled.input`
-  border-radius:15px;
-  margin-bottom:15px;
- padding: 0 15px;
-  height:45px;
+  border-radius: 15px;
+  margin-bottom: 15px;
+  padding: 0 15px;
+  height: 45px;
   width: auto;
   width: 250px;
 `;
@@ -119,6 +118,7 @@ export const Label = styled.label`
 
 export const Textarea = styled.textarea`
   margin-bottom: 16px;
+  border-radius: 15px;
   padding: 15px 15px;
   height: 100px;
   width: 500px;
