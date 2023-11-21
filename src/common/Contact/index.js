@@ -29,8 +29,13 @@ export const Contact = () => {
     // Nazwa salonu fryzjerskiego "Eva's Barber Shop"
     const placeName = "Eva's Barber Shop";
     // Otwieranie linku z konkretną lokalizacją fryzjera w Google Maps
-    window.open(`https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(placeName + ' ' + additionalInfo)}`, '_blank');
-};
+    window.open(
+      `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(
+        placeName + " " + additionalInfo
+      )}`,
+      "_blank"
+    );
+  };
 
   return (
     <Main>
@@ -85,11 +90,11 @@ export const Contact = () => {
         <Tiles>
           <Label>
             <h1>Eva`s Barber Shop </h1>
-            <br />
             Unit2 Irishtown <br />
             Athlone, Co. Weastmeath <br />
-            tel. +353 89 220 26 22 <br />
-            email: evasbarbershop@gmail.com
+            ☎️tel. +353 89 220 26 22
+            <br />
+            📧email: evasbarbershop@gmail.com
           </Label>
           <Button onClick={handleShowOnMap}>Pokaż na mapie</Button>{" "}
         </Tiles>
