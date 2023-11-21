@@ -6,7 +6,7 @@ import solar from "./solar.jpg";
 
 export const TileThirdBox = () => {
   // eslint-disable-next-line react-hooks/exhaustive-deps
-  const images = [lyingsolar,standingsolar, solar];
+  const images = [lyingsolar,standingsolar];
   const currentImageIndex = useImageSlider(images, 3000);
 
   return (
